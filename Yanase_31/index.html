@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>筋トレメニュー</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ヘッダー/ハンバーガーメニュー-->
+
+<header>
+    <div id="navArea">
+        <h1>　　　←メニューはこちら</h1>
+        <nav>
+            <div class="inner">
+                <ul>
+                    <li><a href="#koumoku1">筋トレメニュー作成</a></li>
+                    <li><a href="#koumoku2">インターバルワークアウト</a></li>
+                    <li><a href="#koumoku3">どうしてもやる気が出ないときはこちら</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="toggle_btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div id="mask"></div>
+
+    </div>
+
+    <main>
+
+        <div class="mainvisual">
+            <div class="mainvisual_haikei">
+                <h2>筋トレを無理なく続けよう</h2>
+                <p class="mainvisual_2">〜コロナ禍でだらけた体に鞭を打つ〜</p>
+            </div>
+        </div>
+
+    </main>
+
+</header>
+
+
+
+<h3 id="koumoku1">筋トレメニュー作成</h3>
+<div class="kinntore_menu_yokonarabe">
+    <div class="container_1">
+        <p class="subtitle">鍛えたい部位を選択してください</p>
+
+        <div class="wrap">
+            <div class="block">
+                <span>胸</span>
+                <input data-index="0" id="mune" type="checkbox"/>
+                <label for="mune"></label>
+            </div>
+
+            <div class="block">
+                <span>肩</span>
+                <input data-index="0" id="kata" type="checkbox"/>
+                <label for="kata"></label>
+            </div>
+
+            <div class="block">
+                <span>腕</span>
+                <input data-index="0" id="ude" type="checkbox" />
+                <label for="ude"></label>
+            </div>
+
+            <div class="block">
+                <span>腹筋</span>
+                <input data-index="0" id="fukkinn" type="checkbox" />
+                <label for="fukkinn"></label>
+            </div>
+
+            <div class="block">
+                <span>HIIT</span>
+                <input data-index="0" id="hiit" type="checkbox" />
+                <label for="hiit"></label>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="container_1">
+        <p class="title_soushoku">胸</p>
+        <p id="mune_3"></p>
+         <iframe width="180" height="120" src="https://www.youtube.com/embed/g0nutDMLcag" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen id="mune_2"></iframe>
+    </div>
+
+    <div class="container_1">
+        <p class="title_soushoku">肩</p>
+        <p id="kata_3"></p>
+        <iframe width="180" height="120" src="https://www.youtube.com/embed/bfZKEUUzGeQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen id="kata_2"></iframe>
+    </div>
+
+    <div class="container_1">
+        <p class="title_soushoku">腕</p>
+        <p id="ude_3"></p>
+        <iframe width="180" height="120" src="https://www.youtube.com/embed/wbTljcJVbB0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen id="ude_2"></iframe>
+    </div>
+
+
+    <div class="container_1">
+        <p class="title_soushoku">腹筋</p>
+        <p id="fukkinn_3"></p>
+        <iframe width="180" height="120" src="https://www.youtube.com/embed/bwqZ2UKnGwU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen id="fukkinn_2"></iframe>
+    </div>
+
+    <div class="container_1">
+        <p class="title_soushoku">HIIT</p>
+        <p id="hiit_3"></p>
+        <iframe width="180" height="120" src="https://www.youtube.com/embed/5A9mUYjnIkU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen id="hiit_2"></iframe>
+    </div>
+    
+
+
+
+</div>
+
+
+
+
+<h3 id="koumoku2">インターバルワークアウト</h3>
+
+
+
+<!-- タイマーをセット -->
+
+<div style="text-align:center;">
+
+    <p>入力した秒数ごとに音を鳴らす。ワークアウト・休憩をテンポよく！</p>
+
+    <div class="container mt-5">
+       <div id="PassageArea">0</div>
+    </div>
+ 
+    <div class="container mt-5">
+       <input type="number" id="number" min=1 value=5 style="width:80px;">
+    </div>
+ 
+    <div class="container mt-5">
+       <button class="btn btn-primary" id="startcount" onclick="startShowing();">カウント開始</button>
+       <button class="btn btn-primary" id="endcount" onclick="stopShowing();">カウント停止</button>
+    </div>
+ </div>
+
+ <audio id="sound-file1" preload="auto">
+	<source src="beep1.mp3" type="audio/mp3">
+</audio>
+
+<audio id="sound-file2" preload="auto">
+	<source src="beep2.mp3" type="audio/mp3">
+</audio>
+ 
+ </div>
+
+
+<!-- 名言画像をランダム表示 -->
+
+<h3 id="koumoku3">どうしてもやる気が出ないときはこちら</h3>
+
+<div class="gazoucenter">
+    <div class="meigengazou">
+        <div class="buttonhaichi">
+            <button type="button" id="imageBtn">やる気の出る名言を見る</button>
+        </div>
+        <div class="gazouhaichi">
+            <img id="image"></img>
+        </div>
+    </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+
+</body>
+</html>
